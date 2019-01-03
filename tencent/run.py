@@ -20,11 +20,11 @@ def run():
 
         TencentPipeline().upload_item(item, sets)
 
-    try:
-        TencentPipeline().close_spider()
-    except:
-        Logger().setLogger(tc.log_path, 2, "Failed to close spider,db_session may failed")
-        pass
+    # try:
+    TencentPipeline().close_spider()
+    # except:
+    #     Logger().setLogger(tc.log_path, 2, "Failed to close spider,db_session may failed")
+    #     pass
 
 if __name__ == '__main__':
     run()

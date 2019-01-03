@@ -84,7 +84,7 @@ class TencentPipeline(object):
                         if i in structure['set_notsql'].keys():    #获取存在于set但不存在于数据库内的词汇orm对象
                             key_list.append(structure['set_notsql'][i])
                         else:   #获取存在于set与数据库内的词汇orm对象
-                            x = db.db_session.query(db.Keyword.keyword).filter(db.Keyword.keyword == i).first()
+                            x = db.db_session.query(db.Keyword).filter(db.Keyword.keyword == i).first()   #注意此处应为db.Keyword以获取对象！！！是ORM对象！
                             key_list.append(x)
 
                     else:  #如果该词不存在于set内则创建SQLAlchemy对象并插入之，在添加到key_list与set_notsql内
@@ -94,6 +94,7 @@ class TencentPipeline(object):
                         )
                         try:
                             db.db_session.add(new_keyword)
+                            # db.db_session.flush()
                         except Exception:
                             print("Failed to insert keyword")
 
@@ -131,26 +132,26 @@ class TencentPipeline(object):
         # print(item['link'])
         # print(item['site_id'])
         # print(key_list)
+        print(item)
         new_news = db.News(
             title=item['title'],
             link=item['link'],
             datetime=item['datetime'],
             site_id=item['site_id']
         )
+        print(key_list)
         new_news.keywords = key_list  # 建立每个news和与他相关的keyword的关系
-        try:
-            db.db_session.add(new_news)
-
-            print("DB_SESSSION.ADD SUCCEED")
-        except Exception:
-            Logger().setLogger(tc.log_path, 4, "Failed to insert new news,url is " + item['link'])
-            pass
+        # try:
+        db.db_session.add(new_news)
+        # except Exception:
+        #     Logger().setLogger(tc.log_path, 4, "Failed to insert new news,url is " + item['link'])
+        #     pass
 
     def close_spider(self):
-        try:
-            db.db_session.commit()
-            db.db_session.close()
-            print("Spider Finished")
-        except:
-            print("Close spider failed")
-            Logger().setLogger(tc.log_path, 4, "Failed to commit or close db_session")
+        # try:
+        db.db_session.commit()
+        db.db_session.close()
+        print("Spider Finished")
+        # except:
+        #     print("Close spider failed")
+        #     Logger().setLogger(tc.log_path, 4, "Failed to commit or close db_session")
