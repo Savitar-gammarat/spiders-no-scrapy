@@ -2,15 +2,15 @@
 import sys
 sys.path.append("..")
 import alchemy as db
-from config import ZhihuConfig as zh
+from config import DoubanConfig as do
 from logger import Logger
 
 import jieba
 from pprint import pprint
 
-class ZhihuPipeline(object):
-    site_id = zh.site_id
-    site_name = zh.site_name
+class DoubanPipeline(object):
+    site_id = do.site_id
+    site_name = do.site_name
 
     def orm_sort(self, dict):
         set_out = []
@@ -18,7 +18,6 @@ class ZhihuPipeline(object):
             set_out.append(i[0])
         set_out = set(set_out)
         return set_out
-
 
     def structure_set(self):
         container = dict()
@@ -31,7 +30,7 @@ class ZhihuPipeline(object):
             return container
         except:
             print("Structure sets failed")
-            Logger().setLogger(zh.log_path, 2, "Pipelines, Failed to structure set")
+            Logger().setLogger(do.log_path, 2, "Pipelines, Failed to structure set")
             pass
 
     def open_spider(self, structure):
@@ -53,19 +52,28 @@ class ZhihuPipeline(object):
             print("Succeed open spider")
         except:
             print("Open spider failed")
-            Logger().setLogger(zh.log_path, 3, "Failed to open spider(site info may not be inserted")
+            Logger().setLogger(do.log_path, 3, "Failed to open spider(site info may not be inserted")
             pass
 
     def process_item(self, item):
         item['site_id'] = self.site_id
+        if not "hot" in item.keys():
+            item['hot'] = None
+        else:
+            item['hot'] = float(round(int(item['hot'])/10000,2))
+
+        if not "image" in item.keys():
+            item['image'] = None
+        if not "intro" in item.keys():
+            item['intro'] = None
+
         try:   #尝试对title进行中文分词操作
             item['jieba'] = list(jieba.cut_for_search(item['title']))
             print("jieba Succeed")
         except:
-            Logger().setLogger(zh.log_path, 2,"Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is")
+            Logger().setLogger(do.log_path, 2,"Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is")
             item['jieba'] = None
         return item
-
 
     def upload_item(self, item, structure):
 
@@ -105,38 +113,30 @@ class ZhihuPipeline(object):
 
             print("Succeed add keywords")
 
-
             if item['title'] is not None:  #判断如果item['title']不为空则执行插入操作
                 if item['link'] in structure['news_set']:  #如果该link已经存在于数据表内则尝试对热度hot进行更新操作
-                    try:
-                        exist_news = db.db_session.query(db.News).filter(db.News.link == item['link']).first()
-                        exist_news.hot = item['hot']
-
-                    except Exception:
-                        print("Failed to Update exist news' hot")
+                    pass
                 else:      #创建SQLAlchemy中news对象并尝试插入到表
                     self.insert_new(item, key_list)
             print("Upload Succeed")
         except:
-            Logger().setLogger(zh.log_path, 2, "Pipelines, Failed to upload item,url is" + item['link'])
+            Logger().setLogger(do.log_path, 2, "Pipelines, Failed to upload item,url is" + item['link'])
             pass
 
     def insert_new(self, item, key_list):
-
         new_news = db.News(
             title=item['title'],
             link=item['link'],
             site_id=item['site_id'],
+            hot = item['hot'],
             intro=item['intro'],
-            hot=item['hot'],
             image=item['image']
         )
-
         new_news.keywords = key_list  # 建立每个news和与他相关的keyword的关系
         try:
             db.db_session.add(new_news)
         except Exception:
-            Logger().setLogger(tc.log_path, 4, "Failed to insert new news,url is " + item['link'])
+            Logger().setLogger(do.log_path, 4, "Failed to insert new news,url is " + item['link'])
             pass
 
     def close_spider(self):
@@ -146,4 +146,4 @@ class ZhihuPipeline(object):
             print("Spider Finished")
         except:
             print("Close spider failed")
-            Logger().setLogger(tc.log_path, 4, "Failed to commit or close db_session")
+            Logger().setLogger(do.log_path, 4, "Failed to commit or close db_session")

@@ -9,15 +9,12 @@ from pipelines import TencentPipeline
 
 def run():
     sets = TencentPipeline().structure_set()
-
     TencentPipeline().open_spider(sets)
-
     Tencent().first_requests()
 
     for item in Tencent().second_requests():
 
         TencentPipeline().process_item(item)
-
         TencentPipeline().upload_item(item, sets)
 
     try:
