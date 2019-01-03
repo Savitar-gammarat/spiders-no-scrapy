@@ -46,7 +46,6 @@ class Tencent(object):
                 selector = etree.HTML(requests.get(url, headers=self.headers).content)
                 item['link'] = url
                 item['title'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/h1/text()')
-                # item['catalog'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/div/div[1]/span[1]/text()')[0]   #新闻类目，可留可去
                 item['datetime'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/div/div[1]/span[3]/text()')
                 if item['title'] != []:
                     item['title'] = item['title'][0]
@@ -72,7 +71,6 @@ class Tencent(object):
                     item['link'] = url
                     item['title'] = data['title']
                     item['datetime'] = data['pubtime']
-                    # print(item)
                     yield item
                 else:     #B类中全部js渲染的页面
                     self.third_requests(url)
@@ -107,10 +105,8 @@ class Tencent(object):
         item = dict()
         item['link'] = url
         item['title'] = info[0]
-        # item['image'] = info[1].replace("\\","/").replace("//","/")         #最终图片url解码失败，，，，，
         item['datetime'] = info[1]
         if item['title'] is not None:
-            # print(item)
             yield item
         else:
             Logger().setLogger(tc.log_path, 2, "Get B2 class detail page info failed, title is None")

@@ -6,7 +6,6 @@ from config import TencentConfig as tc
 from logger import Logger
 
 import jieba
-from pprint import pprint
 
 class TencentPipeline(object):
     site_id = tc.site_id
@@ -25,7 +24,7 @@ class TencentPipeline(object):
         try:
             container['site_set'] = db.db_session.query(db.Site.id).filter(db.Site.name == self.site_name).all()
             container['key_set'] = self.orm_sort(db.db_session.query(db.Keyword.keyword).all())
-            container['news_set'] = self.orm_sort(db.db_session.query(db.News.link).all())
+            container['news_set'] = self.orm_sort(db.db_session.query(db.News.link).filter(db.News.site_id == self.site_id).all())
             container['set_notsql'] = {}
 
             return container
@@ -69,7 +68,6 @@ class TencentPipeline(object):
 
 
     def upload_item(self, item, structure):
-        # pprint(structure)
         try:
             if item['jieba'] is None:   #如果item['jieba']为空则表示jieba分词失败
                 print("JieBa failed so no item['jieba']")
@@ -111,15 +109,7 @@ class TencentPipeline(object):
             if item['title'] is not None:  #判断如果item['title']不为空则执行插入操作
                 if item['link'] in structure['news_set']:  #如果该link已经存在于数据表内则略过不再插入
                     pass
-                    # try:
-                    #     exist_news = db.db_session.query(db.News).filter(db.News.title == item['title']).first()
-                    #     if exist_news.site_id == self.site_id:
-                    #         pass
-                    #     else:
-                    #         self.insert_new(item, key_list)
-                    #     # exist_news.hot = item['hot']
-                    # except Exception:
-                    #     print("Failed to Update exist news' hot")
+
                 else:      #创建SQLAlchemy中news对象并尝试插入到表
                     self.insert_new(item, key_list)
             print("Upload Succeed")
@@ -141,17 +131,17 @@ class TencentPipeline(object):
         )
         print(key_list)
         new_news.keywords = key_list  # 建立每个news和与他相关的keyword的关系
-        # try:
-        db.db_session.add(new_news)
-        # except Exception:
-        #     Logger().setLogger(tc.log_path, 4, "Failed to insert new news,url is " + item['link'])
-        #     pass
+        try:
+            db.db_session.add(new_news)
+        except Exception:
+            Logger().setLogger(tc.log_path, 4, "Failed to insert new news,url is " + item['link'])
+            pass
 
     def close_spider(self):
-        # try:
-        db.db_session.commit()
-        db.db_session.close()
-        print("Spider Finished")
-        # except:
-        #     print("Close spider failed")
-        #     Logger().setLogger(tc.log_path, 4, "Failed to commit or close db_session")
+        try:
+            db.db_session.commit()
+            db.db_session.close()
+            print("Spider Finished")
+        except:
+            print("Close spider failed")
+            Logger().setLogger(tc.log_path, 4, "Failed to commit or close db_session")
