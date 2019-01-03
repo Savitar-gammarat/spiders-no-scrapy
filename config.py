@@ -2,19 +2,19 @@
 import datetime
 
 class ORM(object):
-    # #服务器
-    # username = 'hao'
-    # password = '991004'
-    # host = '47.101.196.53'
-    # port = '3306'
-    # database = 'techurls'
-
-    #本机
-    username = 'root'
-    password = ''
-    host = 'localhost'
+    #服务器
+    username = 'hao'
+    password = '991004'
+    host = '47.101.196.53'
     port = '3306'
     database = 'techurls'
+
+    # #本机
+    # username = 'root'
+    # password = ''
+    # host = 'localhost'
+    # port = '3306'
+    # database = 'techurls'
 
 
     today = str(datetime.date.today())
@@ -43,3 +43,9 @@ class TiebaConfig(object):
     site_id = 5
     site_name = '百度贴吧'
     log_path = "../log/tieba/tieba-" + ORM().today + ".txt"
+
+class PhoenixConfig(object):
+    site_id = 6
+    site_name = '凤凰网'
+    log_path = "../log/phoenix/phoenix-" + ORM().today + ".txt"
+
