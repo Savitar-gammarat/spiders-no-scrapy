@@ -1,3 +1,4 @@
+#coding:utf-8
 from sqlalchemy import Table,MetaData,Column,Integer,Float,String,Text,TIMESTAMP,create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session,sessionmaker,relationship
@@ -33,7 +34,7 @@ class News(Base):
     id = Column(Integer,primary_key=True,autoincrement=True)
     title = Column(String(255),nullable=False)
     link = Column(String(255),nullable=False)
-    hot = Column(Float,nullable=False)
+    hot = Column(Float,nullable=True)
     image = Column(String(255),nullable=True)
     intro = Column(Text(),nullable=True)
     datetime = Column(TIMESTAMP(),nullable=False,default=datetime.datetime.now)

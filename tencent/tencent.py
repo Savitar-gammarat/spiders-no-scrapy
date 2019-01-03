@@ -1,9 +1,13 @@
 #coding:utf-8
+import sys
+sys.path.append("..")
+from config import TencentConfig as tc
+from logger import Logger
+
 import requests
 from lxml import etree
 import re
 import json
-import chardet
 
 class Tencent(object):
     headers = {
@@ -14,49 +18,69 @@ class Tencent(object):
     pattern_a = re.compile(r'.*?news.qq.com/a.*?',re.S)
     pattern_b = re.compile(r'.*?new.qq.com/omn.*?',re.S)
 
-    def first_requests(self):
-        print("first")
+    def first_requests(self):   #第一次请求首页以获取详情页url
         selector = etree.HTML(requests.get("https://www.qq.com/", headers=self.headers).content)
         uls = selector.xpath('//*[@id="tab-news-01"]/ul')
-        for ul in uls:
-            lis = ul.xpath('li')
-            for li in lis:
-                hrefs = li.xpath('a/@href')
-                for href in hrefs:
-                    if re.match(self.pattern_a, href):
-                        self.A_urls.append(href)
-                    elif re.match(self.pattern_b, href):
-                        self.B_urls.append(href)
-                    else:
-                        pass
+        try:
+            for ul in uls:
+                lis = ul.xpath('li')
+                for li in lis:
+                    hrefs = li.xpath('a/@href')
+                    for href in hrefs:       #对所有的url进行分类A或B
+                        if re.match(self.pattern_a, href):
+                            self.A_urls.append(href)
+                        elif re.match(self.pattern_b, href):
+                            self.B_urls.append(href)
+                        else:
+                            pass
+            print("First Time Requests Succeed")
+        except:
+            Logger().setLogger(tc.log_path, 4, "Failed to get detail_page_urls")
+            pass
 
-    def second_requests(self):
-        print("second")
-        for url in self.A_urls:
-            item = dict()
-            selector = etree.HTML(requests.get(url, headers=self.headers).content)
-            item['link'] = url
-            item['title'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/h1/text()')[0]
-            item['image'] = None
-            # item['catalog'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/div/div[1]/span[1]/text()')[0]   #新闻类目，可留可去
-            item['datetime'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/div/div[1]/span[3]/text()')[0]
 
-            yield item
-
-        for url in self.B_urls:
-            response = requests.get(url, headers=self.headers)
-            selector = etree.HTML(response.text)
-            data = selector.xpath('/html/head/script[5]/text()')
-            if data:
+    def second_requests(self):    #第二次请求详情页
+        for url in self.A_urls:   #A类url直接请求，得到数据
+            try:
                 item = dict()
-                data = json.loads(data[0].strip()[14:])
+                selector = etree.HTML(requests.get(url, headers=self.headers).content)
                 item['link'] = url
-                item['title'] = data['title']
-                item['datetime'] = data['pubtime']
-                item['image'] = None
+                item['title'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/h1/text()')
+                # item['catalog'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/div/div[1]/span[1]/text()')[0]   #新闻类目，可留可去
+                item['datetime'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/div/div[1]/span[3]/text()')
+                if item['title'] != []:
+                    item['title'] = item['title'][0]
+                    item['datetime'] = item['datetime'][0]
+
+                else:
+                    item['title'] = selector.xpath('//*[@id="Main-Article-QQ"]/div[2]/div[1]/div[2]/div[1]/h1/text()')[0]
+                    item['datetime'] = selector.xpath('//*[@id="Main-Article-QQ"]/div[2]/div[1]/div[2]/div[1]/div/div[1]/span[3]/text()')[0]
+                # print(item)
                 yield item
-            else:
-                self.third_requests(url)
+            except:
+                Logger().setLogger(tc.log_path, 2, "Failed to get A class detail page info,url is" + url)
+                pass
+
+        for url in self.B_urls:    #B类
+            try:
+                response = requests.get(url, headers=self.headers)
+                selector = etree.HTML(response.text)
+                data = selector.xpath('/html/head/script[5]/text()')
+                if data:        #B类中部分js渲染的页面
+                    item = dict()
+                    data = json.loads(data[0].strip()[14:])
+                    item['link'] = url
+                    item['title'] = data['title']
+                    item['datetime'] = data['pubtime']
+                    # print(item)
+                    yield item
+                else:     #B类中全部js渲染的页面
+                    self.third_requests(url)
+            except:
+                Logger().setLogger(tc.log_path, 2, "Get B class detail page info failed,url is" + url)
+                pass
+
+        print("Second Time Requests Finished")
 
     def third_requests(self, url):
         content_api = 'https://openapi.inews.qq.com/getQQNewsNormalContent'   #腾讯异步请求新闻内容的url
@@ -78,14 +102,15 @@ class Tencent(object):
         response = requests.get(content_api, headers=headers, params=params)
         data = eval("'" + response.content.decode('ascii') + "'")
 
-        pattern_item = re.compile(r'.*?"title":"(.*?)",.*?"img":{"imgurl":"(.*?)",.*?"pubtime":"(.*?)",.*?$',re.S)
-        info = re.match(pattern_item, data).group(1,2,3)
+        pattern_item = re.compile(r'.*?"title":"(.*?)",.*?"pubtime":"(.*?)",.*?$',re.S)
+        info = re.match(pattern_item, data).group(1,2)
         item = dict()
         item['link'] = url
         item['title'] = info[0]
-        item['image'] = info[1].replace("\\","/").replace("//","/")         #最终图片url解码失败，，，，，
-        item['datetime'] = info[2]
+        # item['image'] = info[1].replace("\\","/").replace("//","/")         #最终图片url解码失败，，，，，
+        item['datetime'] = info[1]
         if item['title'] is not None:
+            # print(item)
             yield item
         else:
-            print("title为空")
+            Logger().setLogger(tc.log_path, 2, "Get B2 class detail page info failed, title is None")
