@@ -18,7 +18,7 @@ def run():
     try:
         TiebaPipeline().close_spider()
     except:
-        Logger().setLogger(do.log_path, 2, "Failed to close spider,db_session may failed")
+        Logger().setLogger(do.log_path, 4, "Failed to close spider,db_session may failed")
         pass
 
 if __name__ == '__main__':

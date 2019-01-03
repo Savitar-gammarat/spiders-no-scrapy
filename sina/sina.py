@@ -42,5 +42,5 @@ class Sina(object):
             yield item
 
 
-
-Sina().first_requests()
+if __name__ == '__main__':
+    Sina().first_requests()

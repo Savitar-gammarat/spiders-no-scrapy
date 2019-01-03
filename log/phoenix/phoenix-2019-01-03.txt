@@ -1,0 +1,5 @@
+[2019-01-03 22:37:22,850] - logger.setLogger.32 - INFO - Failed to requests detail_url,url is https://news.ifeng.com/c/7j9qKSJhQyp
+[2019-01-03 22:38:37,016] - logger.setLogger.32 - INFO - Failed to requests detail_url,url is https://news.ifeng.com/c/7j9qKSJhQyp
+[2019-01-03 22:40:11,060] - logger.setLogger.32 - INFO - Failed to requests detail_url,url is https://news.ifeng.com/c/7j9qKSJhQyp
+[2019-01-03 22:41:31,912] - logger.setLogger.32 - INFO - Failed to requests detail_url,url is https://news.ifeng.com/c/7j9qKSJhQyp
+[2019-01-03 22:42:03,962] - logger.setLogger.32 - INFO - Failed to requests detail_url,url is https://news.ifeng.com/c/7j9qKSJhQyp

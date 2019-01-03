@@ -2,14 +2,15 @@
 import sys
 sys.path.append("..")
 import alchemy as db
-from config import TencentConfig as tc
+from config import PhoenixConfig as ph
 from logger import Logger
 
 import jieba
 
-class TencentPipeline(object):
-    site_id = tc.site_id
-    site_name = tc.site_name
+
+class PhoenixPipeline(object):
+    site_id = ph.site_id
+    site_name = ph.site_name
 
     def orm_sort(self, dict):
         set_out = []
@@ -17,7 +18,6 @@ class TencentPipeline(object):
             set_out.append(i[0])
         set_out = set(set_out)
         return set_out
-
 
     def structure_set(self):
         container = dict()
@@ -30,7 +30,7 @@ class TencentPipeline(object):
             return container
         except:
             print("Structure sets failed")
-            Logger().setLogger(tc.log_path, 2, "Pipelines, Failed to structure set")
+            Logger().setLogger(ph.log_path, 2, "Pipelines, Failed to structure set")
             pass
 
     def open_spider(self, structure):
@@ -44,7 +44,6 @@ class TencentPipeline(object):
                 )
                 try:
                     db.db_session.add(new_site)
-                    db.db_session.flush()  # 插入到site表后进行“刷新”操作
                     db.db_session.commit()
                     print("成功插入site信息")
                 except:
@@ -53,21 +52,22 @@ class TencentPipeline(object):
             print("Succeed open spider")
         except:
             print("Open spider failed")
-            Logger().setLogger(tc.log_path, 3, "Failed to open spider(site info may not be inserted")
+            Logger().setLogger(ph.log_path, 3, "Failed to open spider(site info may not be inserted")
             pass
 
     def process_item(self, item):
         item['site_id'] = self.site_id
+
         try:   #尝试对title进行中文分词操作
             item['jieba'] = list(jieba.cut_for_search(item['title']))
             print("jieba Succeed")
         except:
-            Logger().setLogger(tc.log_path, 2,"Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is" + item['link'])
+            Logger().setLogger(ph.log_path, 2,"Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is")
             item['jieba'] = None
         return item
 
-
     def upload_item(self, item, structure):
+
         try:
             if item['jieba'] is None:   #如果item['jieba']为空则表示jieba分词失败
                 print("JieBa failed so no item['jieba']")
@@ -92,7 +92,6 @@ class TencentPipeline(object):
                         )
                         try:
                             db.db_session.add(new_keyword)
-                            # db.db_session.flush()
                         except Exception:
                             print("Failed to insert keyword")
 
@@ -105,30 +104,27 @@ class TencentPipeline(object):
 
             print("Succeed add keywords")
 
-
             if item['title'] is not None:  #判断如果item['title']不为空则执行插入操作
-                if item['link'] in structure['news_set']:  #如果该link已经存在于数据表内则略过不再插入
+                if item['link'] in structure['news_set']:  #如果该link已经存在于数据表内则尝试对热度hot进行更新操作
                     pass
-
                 else:      #创建SQLAlchemy中news对象并尝试插入到表
                     self.insert_new(item, key_list)
             print("Upload Succeed")
         except:
-            Logger().setLogger(tc.log_path, 2, "Pipelines, Failed to upload item,url is" + item['link'])
+            Logger().setLogger(ph.log_path, 2, "Pipelines, Failed to upload item,url is" + item['link'])
             pass
 
     def insert_new(self, item, key_list):
         new_news = db.News(
             title=item['title'],
             link=item['link'],
-            datetime=item['datetime'],
             site_id=item['site_id']
         )
         new_news.keywords = key_list  # 建立每个news和与他相关的keyword的关系
         try:
             db.db_session.add(new_news)
         except Exception:
-            Logger().setLogger(tc.log_path, 4, "Failed to insert new news,url is " + item['link'])
+            Logger().setLogger(ph.log_path, 4, "Failed to insert new news,url is " + item['link'])
             pass
 
     def close_spider(self):
@@ -138,4 +134,4 @@ class TencentPipeline(object):
             print("Spider Finished")
         except:
             print("Close spider failed")
-            Logger().setLogger(tc.log_path, 4, "Failed to commit or close db_session")
+            Logger().setLogger(ph.log_path, 4, "Failed to commit or close db_session")

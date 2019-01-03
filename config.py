@@ -49,3 +49,8 @@ class PhoenixConfig(object):
     site_name = '凤凰网'
     log_path = "../log/phoenix/phoenix-" + ORM().today + ".txt"
 
+class NeteaseConfig(object):
+    site_id = 7
+    site_name = '网易新闻'
+    log_path = "../log/netease/netease-" + ORM().today + ".txt"
+
