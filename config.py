@@ -33,3 +33,13 @@ class DoubanConfig(object):
     site_id = 3
     site_name = '豆瓣'
     log_path = "../log/douban/douban-" + ORM().today + ".txt"
+
+class SinaConfig(object):
+    site_id = 4
+    site_name = '新浪'
+    log_path = "../log/sina/sina-" + ORM().today + ".txt"
+
+class TiebaConfig(object):
+    site_id = 5
+    site_name = '百度贴吧'
+    log_path = "../log/tieba/tieba-" + ORM().today + ".txt"

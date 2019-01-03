@@ -118,11 +118,6 @@ class TencentPipeline(object):
             pass
 
     def insert_new(self, item, key_list):
-        # print(item['title'])
-        # print(item['link'])
-        # print(item['site_id'])
-        # print(key_list)
-        print(item)
         new_news = db.News(
             title=item['title'],
             link=item['link'],

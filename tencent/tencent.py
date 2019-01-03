@@ -19,7 +19,11 @@ class Tencent(object):
     pattern_b = re.compile(r'.*?new.qq.com/omn.*?',re.S)
 
     def first_requests(self):   #第一次请求首页以获取详情页url
-        selector = etree.HTML(requests.get("https://www.qq.com/", headers=self.headers).content)
+        try:
+            selector = etree.HTML(requests.get("https://www.qq.com/", headers=self.headers, timeout=5).content)
+        except:
+            Logger().setLogger(tc.log_path, 4, "Failed to get detail_page_urls")
+            pass
         uls = selector.xpath('//*[@id="tab-news-01"]/ul')
         try:
             for ul in uls:
@@ -43,7 +47,7 @@ class Tencent(object):
         for url in self.A_urls:   #A类url直接请求，得到数据
             try:
                 item = dict()
-                selector = etree.HTML(requests.get(url, headers=self.headers).content)
+                selector = etree.HTML(requests.get(url, headers=self.headers, timeout=5).content)
                 item['link'] = url
                 item['title'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/h1/text()')
                 item['datetime'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/div/div[1]/span[3]/text()')
@@ -62,7 +66,7 @@ class Tencent(object):
 
         for url in self.B_urls:    #B类
             try:
-                response = requests.get(url, headers=self.headers)
+                response = requests.get(url, headers=self.headers, timeout=5)
                 selector = etree.HTML(response.text)
                 data = selector.xpath('/html/head/script[5]/text()')
                 if data:        #B类中部分js渲染的页面
@@ -96,8 +100,11 @@ class Tencent(object):
             'srcfrom': 'newsapp',
             'callback': 'getNewsContentOnlyOutput'
         }
-
-        response = requests.get(content_api, headers=headers, params=params)
+        try:
+            response = requests.get(content_api, headers=headers, params=params, timeout=5)
+        except:
+            Logger.setLogger(tc.log_path,4,"Failed to requests content_api")
+            pass
         data = eval("'" + response.content.decode('ascii') + "'")
 
         pattern_item = re.compile(r'.*?"title":"(.*?)",.*?"pubtime":"(.*?)",.*?$',re.S)
