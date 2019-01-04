@@ -7,6 +7,7 @@ from logger import Logger
 import datetime
 
 import jieba
+import re
 
 
 class Pipeline(object):
@@ -86,6 +87,7 @@ class Pipeline(object):
 
         for column in self.column_set:
             self.organ_item(column, item)
+
 
         if item['datetime'] == None:
             item['datetime'] = datetime.datetime.now()

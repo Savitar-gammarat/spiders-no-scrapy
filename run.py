@@ -4,7 +4,7 @@ sys.path.append("..")
 from config import MainConfig as m
 from logger import Logger
 
-from crawler import zhihu,tencent,douban,sina,tieba,phoenix,netease
+from crawler import zhihu,tencent,douban,sina,tieba,phoenix,netease,huanqiu,xinhua
 
 def go(className):
     try:
@@ -20,6 +20,8 @@ def run():
     go(tieba)
     go(phoenix)
     go(netease)
+    go(huanqiu)
+    go(xinhua)
 
 if __name__ == '__main__':
     run()

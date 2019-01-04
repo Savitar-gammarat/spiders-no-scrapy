@@ -10,7 +10,7 @@ from lxml import etree
 import re
 
 
-class Netease(object):
+class Huanqiu(object):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3610.2 Safari/537.36'
     }
@@ -61,6 +61,7 @@ class Netease(object):
             yield item
 
     def process_item(self, item):
+        # 对item['datetime']进行格式化处理
         datetime_pattern = re.compile(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}', re.S)
         datetime_patternB = re.compile(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}', re.S)
         if type(item['title']) == str:
@@ -97,10 +98,10 @@ def run():
     sets = Pipeline(hq.site_id, hq.site_name).structure_set()
     Pipeline(hq.site_id, hq.site_name).open_spider(sets)
 
-    detail_url = Netease().first_requests()
+    detail_url = Huanqiu().first_requests()
 
-    for item in Netease().second_requests(detail_url):
-        Netease().process_item(item)
+    for item in Huanqiu().second_requests(detail_url):
+        Huanqiu().process_item(item)
         Pipeline(hq.site_id, hq.site_name).process_item(item)
         Pipeline(hq.site_id, hq.site_name).upload_item(item, sets)
 
