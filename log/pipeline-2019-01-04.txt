@@ -1,0 +1,6 @@
+[2019-01-04 13:13:41,670] - logger.setLogger.32 - INFO - Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is
+[2019-01-04 13:13:41,927] - logger.setLogger.32 - INFO - Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is
+[2019-01-04 13:13:41,927] - logger.setLogger.32 - INFO - Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is
+[2019-01-04 13:13:42,035] - logger.setLogger.32 - INFO - Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is
+[2019-01-04 13:13:42,035] - logger.setLogger.32 - INFO - Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is
+[2019-01-04 13:13:42,035] - logger.setLogger.32 - INFO - Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is

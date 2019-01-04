@@ -2,28 +2,28 @@
 import datetime
 
 class ORM(object):
-    #服务器
-    username = 'hao'
-    password = '991004'
-    host = '47.101.196.53'
-    port = '3306'
-    database = 'techurls'
-
-    # #本机
-    # username = 'root'
-    # password = ''
-    # host = 'localhost'
+    # #服务器
+    # username = 'hao'
+    # password = '991004'
+    # host = '47.101.196.53'
     # port = '3306'
     # database = 'techurls'
+
+    #本机
+    username = 'root'
+    password = ''
+    host = 'localhost'
+    port = '3306'
+    database = 'techurls'
 
     today = str(datetime.date.today())
 
 class MainConfig(object):
-    log_path = "../log/Main-" + ORM().today + ".txt"
+    log_path = "../log/main-" + ORM().today + ".txt"
 
 
 class PipelineConfig(object):
-    log_path = "log/Pipeline-" + ORM().today + ".txt"
+    log_path = "../log/pipeline-" + ORM().today + ".txt"
 
 
 class ZhihuConfig(object):
@@ -68,3 +68,13 @@ class NeteaseConfig(object):
     log_path = "../log/netease/netease-" + ORM().today + ".txt"
 
 
+class HuanqiuConfig(object):
+    site_id = 8
+    site_name = '环球网'
+    log_path = "../log/huanqiu/huanqiu-" + ORM().today + ".txt"
+
+
+class XinHuaConfig(object):
+    site_id = 9
+    site_name = '新华网'
+    log_path = "../log/xinhua/xinhua-" + ORM().today + ".txt"

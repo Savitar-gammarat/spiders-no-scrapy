@@ -12,18 +12,16 @@ def go(className):
     except:
         Logger.setLogger(m.log_path, 4,className + " Spider Failed")
 
+def run():
+    go(zhihu)
+    go(tencent)
+    go(douban)
+    go(sina)
+    go(tieba)
+    go(phoenix)
+    go(netease)
 
 if __name__ == '__main__':
-
-    def run():
-        go(zhihu)
-        go(tencent)
-        go(douban)
-        go(sina)
-        go(tieba)
-        go(phoenix)
-        go(netease)
-
     run()
 
 

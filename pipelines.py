@@ -4,6 +4,7 @@ sys.path.append("..")
 import alchemy as db
 from config import PipelineConfig as ne
 from logger import Logger
+import datetime
 
 import jieba
 
@@ -74,18 +75,20 @@ class Pipeline(object):
     def process_item(self, item):
 
         item['site_id'] = self.site_id
-        # item['hot'] = float(round(int(item['hot'])/10000,2))
-
-        try:   #尝试对title进行中文分词操作
-            item['jieba'] = list(jieba.cut_for_search(item['title']))
-            print("jieba Succeed")
-        except:
-            Logger().setLogger(ne.log_path, 2,"Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is")
-            item['jieba'] = None
+        if item['title'] != None:
+            try:   #尝试对title进行中文分词操作
+                item['jieba'] = list(jieba.cut_for_search(item['title']))
+                print("jieba Succeed")
+            except:
+                Logger().setLogger(ne.log_path, 2,"Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is")
+                item['jieba'] = None
 
 
         for column in self.column_set:
             self.organ_item(column, item)
+
+        if item['datetime'] == None:
+            item['datetime'] = datetime.datetime.now()
 
         return item
 
