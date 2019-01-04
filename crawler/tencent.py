@@ -3,6 +3,7 @@ import sys
 sys.path.append("..")
 from config import TencentConfig as tc
 from logger import Logger
+from pipelines import Pipeline
 
 import requests
 from lxml import etree
@@ -117,3 +118,21 @@ class Tencent(object):
             yield item
         else:
             Logger().setLogger(tc.log_path, 2, "Get B2 class detail page info failed, title is None")
+
+def run():
+    sets = Pipeline(tc.site_id, tc.site_name).structure_set()
+    Pipeline(tc.site_id, tc.site_name).open_spider(sets)
+    Tencent().first_requests()
+
+    for item in Tencent().second_requests():
+        Pipeline(tc.site_id, tc.site_name).process_item(item)
+        Pipeline(tc.site_id, tc.site_name).upload_item(item, sets)
+
+    try:
+        Pipeline(tc.site_id, tc.site_name).close_spider()
+    except:
+        Logger().setLogger(tc.log_path, 4, "Failed to close spider,db_session may failed")
+        pass
+
+if __name__ == '__main__':
+    run()

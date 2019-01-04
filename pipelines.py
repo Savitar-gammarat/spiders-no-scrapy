@@ -2,27 +2,35 @@
 import sys
 sys.path.append("..")
 import alchemy as db
-from config import TiebaConfig as tb
+from config import PipelineConfig as ne
 from logger import Logger
 
 import jieba
 
 
-class TiebaPipeline(object):
-    site_id = tb.site_id
-    site_name = tb.site_name
+class Pipeline(object):
+
+    column_set = ["title", "link", "hot", "image", "intro", "datetime", "site_id", "jieba"]  # 对进入pipelines的item进行格式化处理的column名
+
+    def __init__(self, site_id, site_name):
+
+        self.site_id = site_id
+        self.site_name = site_name
+
+
 
     def orm_sort(self, dict):
         set_out = []
         for i in dict:
             set_out.append(i[0])
         set_out = set(set_out)
+
         return set_out
 
     def structure_set(self):
         container = dict()
         try:
-            container['site_set'] = db.db_session.query(db.Site.id).filter(db.Site.name == self.site_name).all()
+            container['site_set'] = db.db_session.query(db.Site).filter(db.Site.id == self.site_id).all()
             container['key_set'] = self.orm_sort(db.db_session.query(db.Keyword.keyword).all())
             container['news_set'] = self.orm_sort(db.db_session.query(db.News.link).filter(db.News.site_id == self.site_id).all())
             container['set_notsql'] = {}
@@ -30,13 +38,14 @@ class TiebaPipeline(object):
             return container
         except:
             print("Structure sets failed")
-            Logger().setLogger(tb.log_path, 2, "Pipelines, Failed to structure set")
+            Logger().setLogger(ne.log_path, 2, "Pipelines, Failed to structure set")
             pass
 
     def open_spider(self, structure):
         try:
             if structure['site_set']:  # 判断该站点是否已经建立在site表内，如未建立则创建之，id须从settings内提前设置正确
-                self.site_id = db.db_session.query(db.Site.id).filter(db.Site.name == self.site_name).first()[0]
+                pass
+                # self.site_id = db.db_session.query(db.Site.id).filter(db.Site.name == self.site_name).first()[0]
             else:
                 new_site = db.Site(  # 创建新的site对象，并尝试插入到site表
                     id=self.site_id,
@@ -52,19 +61,32 @@ class TiebaPipeline(object):
             print("Succeed open spider")
         except:
             print("Open spider failed")
-            Logger().setLogger(tb.log_path, 3, "Failed to open spider(site info may not be inserted")
+            Logger().setLogger(ne.log_path, 3, "Failed to open spider(site info may not be inserted")
             pass
 
+    def organ_item(self, key, item):
+        if key in item.keys():
+            pass
+        else:
+            item[key] = None
+        return item
+
     def process_item(self, item):
+
         item['site_id'] = self.site_id
-        item['hot'] = float(round(int(item['hot'])/10000,2))
+        # item['hot'] = float(round(int(item['hot'])/10000,2))
 
         try:   #尝试对title进行中文分词操作
             item['jieba'] = list(jieba.cut_for_search(item['title']))
             print("jieba Succeed")
         except:
-            Logger().setLogger(tb.log_path, 2,"Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is")
+            Logger().setLogger(ne.log_path, 2,"Pipelines, Failed to process item,So no jieba or site_id,may cause error,url is")
             item['jieba'] = None
+
+
+        for column in self.column_set:
+            self.organ_item(column, item)
+
         return item
 
     def upload_item(self, item, structure):
@@ -112,23 +134,24 @@ class TiebaPipeline(object):
                     self.insert_new(item, key_list)
             print("Upload Succeed")
         except:
-            Logger().setLogger(tb.log_path, 2, "Pipelines, Failed to upload item,url is" + item['link'])
+            Logger().setLogger(ne.log_path, 2, "Pipelines, Failed to upload item,url is" + item['link'])
             pass
 
     def insert_new(self, item, key_list):
         new_news = db.News(
-            title=item['title'],
             link=item['link'],
-            site_id=item['site_id'],
-            intro=item['intro'],
+            title=item['title'],
             hot=item['hot'],
-            image=item['image']
+            image=item['image'],
+            intro=item['intro'],
+            site_id=item['site_id'],
+            datetime=item['datetime']
         )
         new_news.keywords = key_list  # 建立每个news和与他相关的keyword的关系
         try:
             db.db_session.add(new_news)
         except Exception:
-            Logger().setLogger(tb.log_path, 4, "Failed to insert new news,url is " + item['link'])
+            Logger().setLogger(ne.log_path, 4, "Failed to insert new news,url is " + item['link'])
             pass
 
     def close_spider(self):
@@ -138,4 +161,4 @@ class TiebaPipeline(object):
             print("Spider Finished")
         except:
             print("Close spider failed")
-            Logger().setLogger(tb.log_path, 4, "Failed to commit or close db_session")
+            Logger().setLogger(ne.log_path, 4, "Failed to commit or close db_session")

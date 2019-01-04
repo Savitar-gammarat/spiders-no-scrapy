@@ -3,6 +3,7 @@ import sys
 sys.path.append("..")
 from config import ZhihuConfig as zh
 from logger import Logger
+from pipelines import Pipeline
 
 import requests
 from lxml import etree
@@ -61,4 +62,22 @@ class Zhihu(object):
             str = list[0]
         return str
 
-Zhihu().first_requests()
+def run():
+    sets = Pipeline(zh.site_id, zh.site_name).structure_set()
+
+    Pipeline(zh.site_id, zh.site_name).open_spider(sets)
+
+    for item in Zhihu().first_requests():
+        Pipeline(zh.site_id, zh.site_name).process_item(item)
+
+        Pipeline(zh.site_id, zh.site_name).upload_item(item, sets)
+
+    try:
+        Pipeline(zh.site_id, zh.site_name).close_spider()
+    except:
+        Logger().setLogger(zh.log_path, 2, "Failed to close spider,db_session may failed")
+        pass
+
+if __name__ == '__main__':
+
+    run()

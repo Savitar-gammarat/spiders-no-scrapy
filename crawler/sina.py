@@ -3,6 +3,7 @@ import sys
 sys.path.append("..")
 from config import SinaConfig as sina
 from logger import Logger
+from pipelines import Pipeline
 
 import requests
 import datetime
@@ -42,5 +43,20 @@ class Sina(object):
             yield item
 
 
+
+def run():
+    sets = Pipeline(sina.site_id, sina.site_name).structure_set()
+    Pipeline(sina.site_id, sina.site_name).open_spider(sets)
+
+    for item in Sina().first_requests():
+        Pipeline(sina.site_id, sina.site_name).process_item(item)
+        Pipeline(sina.site_id, sina.site_name).upload_item(item, sets)
+
+    try:
+        Pipeline(sina.site_id, sina.site_name).close_spider()
+    except:
+        Logger().setLogger(sina.log_path, 2, "Failed to close spider,db_session may failed")
+        pass
+
 if __name__ == '__main__':
-    Sina().first_requests()
+    run()

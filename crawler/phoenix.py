@@ -3,6 +3,7 @@ import sys
 sys.path.append("..")
 from config import PhoenixConfig as ph
 from logger import Logger
+from pipelines import Pipeline
 
 import requests
 from lxml import etree
@@ -47,6 +48,19 @@ class Phoenix(object):
                     item['title'] = new.xpath('text()')[0]
                     yield item
 
+def run():
+    sets = Pipeline(ph.site_id, ph.site_name).structure_set()
+    Pipeline(ph.site_id, ph.site_name).open_spider(sets)
+
+    for item in Phoenix().first_requests():
+        Pipeline(ph.site_id, ph.site_name).process_item(item)
+        Pipeline(ph.site_id, ph.site_name).upload_item(item, sets)
+
+    try:
+        Pipeline(ph.site_id, ph.site_name).close_spider()
+    except:
+        Logger().setLogger(ph.log_path, 4, "Failed to close spider,db_session may failed")
+        pass
 
 if __name__ == '__main__':
-    Phoenix().first_requests()
+    run()

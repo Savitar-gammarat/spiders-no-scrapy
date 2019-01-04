@@ -1,8 +1,9 @@
 #coding:utf-8
 import sys
 sys.path.append("..")
-from config import TiebaConfig as tb
+from config import NeteaseConfig as ne
 from logger import Logger
+from pipelines import Pipeline
 
 import requests
 from lxml import etree
@@ -17,7 +18,7 @@ class Netease(object):
         try:
             response = requests.get('http://news.163.com/rank/', headers=self.headers)
         except:
-            Logger().setLogger(tb.log_path, 4, "Failed to get detail_page_urls")
+            Logger().setLogger(ne.log_path, 4, "Failed to get detail_page_urls")
             pass
         print(response)
         selector = etree.HTML(response.text)
@@ -41,7 +42,7 @@ class Netease(object):
                 item['hot'] = part.xpath('td[2]/text()')[0]
                 detail_url.append(item)
         except:
-            Logger().setLogger(tb.log_path, 2, "Failed to get detail_page_url from home")
+            Logger().setLogger(ne.log_path, 2, "Failed to get detail_page_url from home")
             pass
 
         return detail_url
@@ -52,7 +53,7 @@ class Netease(object):
             try:
                 response = requests.get(detail['link'], headers=self.headers)
             except:
-                Logger().setLogger(tb.log_path, 2, "Failed to get detail_page, url is " + detail['link'])
+                Logger().setLogger(ne.log_path, 2, "Failed to get detail_page, url is " + detail['link'])
                 pass
             selector = etree.HTML(response.content)
             detail['datetime'] = selector.xpath('//*[@id="epContentLeft"]/div[1]/text()')
@@ -65,8 +66,28 @@ class Netease(object):
 
             yield detail
 
+    def process_item(self,item):
+        item['hot'] = float(round(int(item['hot']) / 10000, 2))
+        return item
+
+
+def run():
+    sets = Pipeline(ne.site_id, ne.site_name).structure_set()
+    Pipeline(ne.site_id, ne.site_name).open_spider(sets)
+
+    detail_url = Netease().first_requests()
+
+    for item in Netease().second_requests(detail_url):
+        Netease().process_item(item)
+        Pipeline(ne.site_id, ne.site_name).process_item(item)
+        Pipeline(ne.site_id, ne.site_name).upload_item(item, sets)
+
+    try:
+        Pipeline(ne.site_id, ne.site_name).close_spider()
+    except:
+        Logger().setLogger(ne.log_path, 4, "Failed to close spider,db_session may failed")
+        pass
 
 
 if __name__ == '__main__':
-    detail_url = Netease().first_requests()
-    Netease().second_requests(detail_url)
+    run()

@@ -3,6 +3,7 @@ import sys
 sys.path.append("..")
 from config import DoubanConfig as do
 from logger import Logger
+from pipelines import Pipeline
 
 import requests
 from lxml import etree
@@ -50,6 +51,14 @@ class Douban(object):
             if item['title']:
                 yield item
 
+    def process_item(self, item):
+        if not "hot" in item.keys():
+            item['hot'] = None
+        else:
+            item['hot'] = float(round(int(item['hot'])/10000,2))
+
+        return item
+
     def get_out(self, list):
         if list == []:
             str = None
@@ -60,4 +69,21 @@ class Douban(object):
         return str
 
 
-Douban().first_requests()
+
+def run():
+    sets = Pipeline(do.site_id, do.site_name).structure_set()
+    Pipeline(do.site_id, do.site_name).open_spider(sets)
+
+    for item in Douban().first_requests():
+        Douban().process_item(item)
+        Pipeline(do.site_id, do.site_name).process_item(item)
+        Pipeline(do.site_id, do.site_name).upload_item(item, sets)
+
+    try:
+        Pipeline(do.site_id, do.site_name).close_spider()
+    except:
+        Logger().setLogger(do.log_path, 4, "Failed to close spider,db_session may failed")
+        pass
+
+if __name__ == '__main__':
+    run()
