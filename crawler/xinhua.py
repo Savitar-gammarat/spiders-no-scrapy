@@ -7,7 +7,6 @@ from pipelines import Pipeline
 
 import requests
 from lxml import etree
-import re
 import datetime
 
 

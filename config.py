@@ -2,19 +2,19 @@
 import datetime
 
 class ORM(object):
-    #服务器
-    username = 'hao'
-    password = '991004'
-    host = '47.101.196.53'
-    port = '3306'
-    database = 'techurls'
-
-    # #本机
-    # username = 'root'
-    # password = ''
-    # host = 'localhost'
+    # #服务器
+    # username = 'hao'
+    # password = '991004'
+    # host = '47.101.196.53'
     # port = '3306'
     # database = 'techurls'
+
+    #本机
+    username = 'root'
+    password = ''
+    host = 'localhost'
+    port = '3306'
+    database = 'techurls'
 
     today = str(datetime.date.today())
 
@@ -78,3 +78,45 @@ class XinHuaConfig(object):
     site_id = 9
     site_name = '新华网'
     log_path = "../log/xinhua/xinhua-" + ORM().today + ".txt"
+
+
+class DoNewsConfig(object):
+    site_id = 10
+    site_name = 'DoNews'
+    log_path = "../log/donews/donews-" + ORM().today + ".txt"
+
+
+class SouHuConfig(object):
+    site_id = 11
+    site_name = '搜狐'
+    log_path = "../log/souhu/souhu-" + ORM().today + ".txt"
+
+
+class BBCConfig(object):
+    site_id = 12
+    site_name = 'BBC'
+    log_path = "../log/bbc/bbc-" + ORM().today + ".txt"
+
+
+class SlashDotConfig(object):
+    site_id = 13
+    site_name = 'SlashDot'
+    log_path = "../log/slashdot/slashdot" + ORM().today + ".txt"
+
+
+class WiredConfig(object):
+    site_id = 14
+    site_name = 'Wired'
+    log_path = "../log/wired/wired" + ORM().today + ".txt"
+
+
+class TimeConfig(object):
+    site_id = 15
+    site_name = 'Time Manazine'
+    log_path = "../log/time/time" + ORM().today + ".txt"
+
+
+class NewYorkTimeConfig(object):
+    site_id = 16
+    site_name = 'New York Time Magazine'
+    log_path = "../log/newyork/newyork" + ORM().today + ".txt"
