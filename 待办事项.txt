@@ -1,0 +1,16 @@
+知乎 #49C1FB logos/zhihu.svg
+腾讯 #0099D6 logos/tencent.svg
+豆瓣 #58CC6A logos/douban.svg
+新浪 #E6162D logos/sina.svg
+贴吧 #1373CA logos/tieba.svg
+凤凰网 #F54343 logos/ifeng.svg
+网易 #CE5156 logos/netease.svg
+环球 #BCAB7A logos/huanqiu.png
+新华 #99CCCC logos/xinhua.png
+donews #f3f5f6 logos/donews.png
+搜狐 #F63F14 logos/sohu.svg
+BBC #9d0a0e logos/bbc.svg
+slashdot #006966 logos/slashdot.png
+Wired  #000000 logos/wired.jpg
+time #FFFFFF logos/time.png
+NYKtimes #26272b logos/nytime.png

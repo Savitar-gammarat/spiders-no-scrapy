@@ -2,19 +2,19 @@
 import datetime
 
 class ORM(object):
-    # #服务器
-    # username = 'hao'
-    # password = '991004'
-    # host = '47.101.196.53'
-    # port = '3306'
-    # database = 'techurls'
-
-    #本机
-    username = 'root'
-    password = ''
-    host = 'localhost'
+    #服务器
+    username = 'hao'
+    password = '991004'
+    host = '47.101.196.53'
     port = '3306'
     database = 'techurls'
+
+    # #本机
+    # username = 'root'
+    # password = ''
+    # host = 'localhost'
+    # port = '3306'
+    # database = 'techurls'
 
     today = str(datetime.date.today())
 
@@ -112,11 +112,17 @@ class WiredConfig(object):
 
 class TimeConfig(object):
     site_id = 15
-    site_name = 'Time Manazine'
+    site_name = 'Time'
     log_path = "../log/time/time" + ORM().today + ".txt"
 
 
 class NewYorkTimeConfig(object):
     site_id = 16
-    site_name = 'New York Time Magazine'
+    site_name = 'New York Times'
     log_path = "../log/newyork/newyork" + ORM().today + ".txt"
+
+
+class EconomistConfig(object):
+    site_id = 17
+    site_name = 'The Economist'
+    log_path = "../log/economic/economic" + ORM().today + ".txt"
