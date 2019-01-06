@@ -62,8 +62,9 @@ class Site(Base):
     name = Column(String(25),nullable=False)
     pageviews = Column(Integer,nullable=True)
 #创建pass字段用作占位
-    pass1 = Column(String(255),nullable=True)
-    pass2 = Column(String(255),nullable=True)
+    color = Column(String(255),nullable=True)
+    logo = Column(String(255),nullable=True)
+    font = Column(String(255), nullable=True)
     site_news = relationship('News', backref='site')  #创建站点与新闻表之间的一对多关系
 
 

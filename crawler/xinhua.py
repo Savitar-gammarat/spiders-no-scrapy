@@ -8,6 +8,7 @@ from pipelines import Pipeline
 import requests
 from lxml import etree
 import datetime
+import re
 
 
 class Xinhua(object):
@@ -15,6 +16,7 @@ class Xinhua(object):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3610.2 Safari/537.36'
     }
     today = str(datetime.date.today()).replace('-','')
+    re_title = re.compile(r'.{4,}',re.S)
 
     def first_requests(self):
         url = 'http://www.news.cn/cover' + self.today + 'a/index.htm'
@@ -35,7 +37,8 @@ class Xinhua(object):
                 item['link'] = self.xpath_out(href.xpath('@href'))
 
                 if item['title'] != None:
-                    yield item
+                    if re.match(self.re_title, item['title']):
+                        yield item
 
 
 

@@ -9,8 +9,7 @@ import requests
 import datetime
 import json
 import time
-from lxml import etree
-import re
+
 
 class Sina(object):
     headers = {

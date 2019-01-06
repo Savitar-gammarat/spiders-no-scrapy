@@ -126,3 +126,9 @@ class EconomistConfig(object):
     site_id = 17
     site_name = 'The Economist'
     log_path = "../log/economic/economic" + ORM().today + ".txt"
+
+
+class FortuneConfig(object):
+    site_id = 18
+    site_name = 'Fortune'
+    log_path = "../log/fortune/fortune" + ORM().today + ".txt"

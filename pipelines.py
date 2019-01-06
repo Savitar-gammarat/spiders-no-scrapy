@@ -7,7 +7,6 @@ from logger import Logger
 import datetime
 
 import jieba
-import re
 
 
 class Pipeline(object):

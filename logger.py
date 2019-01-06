@@ -9,6 +9,7 @@ class Logger(object):
         logger = logging.getLogger('mylogger')
         logger.setLevel(logging.DEBUG)
 
+        os.mknod(path)
         # 创建一个handler，用于写入日志文件
         fh = logging.FileHandler(os.path.join(os.getcwd(), path),encoding='utf8')
         fh.setLevel(logging.DEBUG)
