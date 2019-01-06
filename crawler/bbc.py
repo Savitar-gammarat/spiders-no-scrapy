@@ -86,6 +86,7 @@ class BBC(object):
 
 
 def run():
+
     sets = Pipeline(bbc.site_id, bbc.site_name).structure_set()
     Pipeline(bbc.site_id, bbc.site_name).open_spider(sets)
     urls = BBC().first_requests()

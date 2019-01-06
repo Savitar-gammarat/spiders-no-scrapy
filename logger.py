@@ -4,12 +4,13 @@ import os
 
 class Logger(object):
 
+
     def setLogger(self, path, level, error):
+
         # 创建一个logger,可以考虑如何将它封装
         logger = logging.getLogger('mylogger')
         logger.setLevel(logging.DEBUG)
 
-        os.mknod(path)
         # 创建一个handler，用于写入日志文件
         fh = logging.FileHandler(os.path.join(os.getcwd(), path),encoding='utf8')
         fh.setLevel(logging.DEBUG)
@@ -43,4 +44,4 @@ class Logger(object):
         # logger.debug('还好')
         # logger.info('hello world, i\'m log helper in python, may i help you')
         # return logger
-# Logger().setLogger("log/tencent.txt", 4, "我是郝轲")
+

@@ -71,6 +71,7 @@ class Douban(object):
 
 
 def run():
+
     sets = Pipeline(do.site_id, do.site_name).structure_set()
     Pipeline(do.site_id, do.site_name).open_spider(sets)
 

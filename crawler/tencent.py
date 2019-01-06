@@ -120,6 +120,7 @@ class Tencent(object):
             Logger().setLogger(tc.log_path, 2, "Get B2 class detail page info failed, title is None")
 
 def run():
+
     sets = Pipeline(tc.site_id, tc.site_name).structure_set()
     Pipeline(tc.site_id, tc.site_name).open_spider(sets)
     Tencent().first_requests()
