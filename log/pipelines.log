@@ -1,0 +1,13 @@
+[2019-01-06 10:55:00,243] - logger.setLogger.35 - INFO - Pipelines, Failed to structure set
+[2019-01-06 10:55:00,244] - logger.setLogger.37 - WARNING - Failed to open spider(site info may not be inserted
+[2019-01-06 10:55:00,244] - logger.setLogger.37 - WARNING - Failed to open spider(site info may not be inserted
+[2019-01-06 10:56:36,575] - logger.setLogger.34 - INFO - Pipelines, Failed to structure set
+[2019-01-06 10:56:36,576] - logger.setLogger.36 - WARNING - Failed to open spider(site info may not be inserted
+[2019-01-06 10:56:36,576] - logger.setLogger.36 - WARNING - Failed to open spider(site info may not be inserted
+[2019-01-06 10:56:39,983] - logger.setLogger.34 - INFO - Pipelines, Failed to upload item,url is/news/business-46757872
+[2019-01-06 10:56:39,983] - logger.setLogger.34 - INFO - Pipelines, Failed to upload item,url is/news/business-46757872
+[2019-01-06 10:56:39,983] - logger.setLogger.34 - INFO - Pipelines, Failed to upload item,url is/news/business-46757872
+[2019-01-06 10:56:41,262] - logger.setLogger.34 - INFO - Pipelines, Failed to upload item,url is/news/world-us-canada-46770650
+[2019-01-06 10:56:41,262] - logger.setLogger.34 - INFO - Pipelines, Failed to upload item,url is/news/world-us-canada-46770650
+[2019-01-06 10:56:41,262] - logger.setLogger.34 - INFO - Pipelines, Failed to upload item,url is/news/world-us-canada-46770650
+[2019-01-06 10:56:41,262] - logger.setLogger.34 - INFO - Pipelines, Failed to upload item,url is/news/world-us-canada-46770650

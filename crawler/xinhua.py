@@ -25,6 +25,10 @@ class Xinhua(object):
         except:
             Logger().setLogger(xh.log_path, 4, "Failed to requests Xinhua home")
             pass
+        if response.status_code == 404:
+            url = 'http://www.news.cn/cover' + str(datetime.date.today() - datetime.timedelta(days=1)).replace('-','') + 'a/index.htm'
+            response = requests.get(url, headers=self.headers)
+
         selector = etree.HTML(response.content)
         hrefs = selector.xpath('//*[@id="headLine"]/div[5]/div[3]//a')
         url_set = []

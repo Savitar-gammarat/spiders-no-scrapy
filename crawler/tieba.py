@@ -19,7 +19,7 @@ class Tieba(object):
         except:
             Logger().setLogger(tb.log_path, 4, "Failed to get detail_page_urls")
             pass
-        topics = json.loads(response.content)['data']['bang_topic']['topic_list']
+        topics = json.loads(response.content.decode('utf8'))['data']['bang_topic']['topic_list']
         for topic in topics:
             item = dict()
             item['intro'] = topic['abstract']

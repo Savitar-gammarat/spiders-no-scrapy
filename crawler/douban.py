@@ -45,8 +45,14 @@ class Douban(object):
             item['link'] = self.get_out(s.xpath('a/@href'))
             item['title'] = self.get_out(s.xpath('a/text()'))
             item['hot'] = self.get_out(s.xpath('span/text()'))
-            if item['hot']:
-                item['hot'] = re.match(self.hot_pattern, str(item['hot'])).group(1)
+            print(item)
+
+            item['hot'] = re.match(self.hot_pattern, str(item['hot']))
+            if item['hot'] is not None:
+                item['hot'] = item['hot'].group(1)
+
+                # if item['hot']:
+                #     item['hot'] = item['hot'].group(1)
 
             if item['title']:
                 yield item
@@ -55,7 +61,8 @@ class Douban(object):
         if not "hot" in item.keys():
             item['hot'] = None
         else:
-            item['hot'] = float(round(int(item['hot'])/10000,2))
+            if item['hot'] is not None:
+                item['hot'] = float(round(int(item['hot'])/10000,2))
 
         return item
 

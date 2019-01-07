@@ -9,6 +9,7 @@ from crawler import zhihu,tencent,douban,sina,tieba,phoenix,netease,huanqiu,xinh
 def go(className):
     try:
         className.run()
+        print(className + "Succeed！")
     except:
         Logger.setLogger(m.log_path, 4,className + " Spider Failed")
 

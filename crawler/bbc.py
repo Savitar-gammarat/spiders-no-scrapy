@@ -53,7 +53,7 @@ class BBC(object):
 
             item = dict()
             item['title'] = self.xpath_out(selector.cssselect('.vxp-media__body h1')).text
-            item['link'] = url
+            item['link'] = 'www.bbc.com' + url
             item['image'] = self.xpath_out(selector.cssselect('.vxp-media__player img')).get('src')
             yield item
 
@@ -70,7 +70,7 @@ class BBC(object):
             item['title'] = self.xpath_out(selector.cssselect('.story-body__h1'))
             if item['title'] != None:
                 item['title'] = item['title'].text
-                item['link'] = url
+                item['link'] = 'www.bbc.com' + url
                 item['intro'] = self.xpath_out(selector.cssselect('.story-body__introduction')).text
                 yield item
 

@@ -9,6 +9,7 @@ import requests
 import datetime
 import json
 import time
+from pprint import pprint
 
 
 class Sina(object):
@@ -30,7 +31,9 @@ class Sina(object):
         except:
             Logger().setLogger(sina.log_path, 4, "Failed to get detail_page_urls")
             pass
-        data = json.loads(response.content[10:-2])['data']
+
+
+        data = json.loads(response.content[10:-2].decode('utf8'))['data']
         for news in data:
             item = dict()
             item['title'] = news['title']
@@ -38,12 +41,13 @@ class Sina(object):
             item['datetime'] = time.strptime(news['time'][:-6], '%a, %d %b %Y %H:%M:%S')
             item['datetime'] = time.strftime('%Y-%m-%d %H:%M:%S', item['datetime'])
             item['image'] = news['ext3']
-            # print(item['datetime'])
+
             yield item
 
 
 
 def run():
+
     sets = Pipeline(sina.site_id, sina.site_name).structure_set()
     Pipeline(sina.site_id, sina.site_name).open_spider(sets)
 
