@@ -23,7 +23,7 @@ class Fortune(object):
         try:
             response = requests.get('http://www.fortune.com/',headers=self.headers,proxies=self.proxies)
         except:
-            Logger().setLogger(fo.log_path, 4, "Failed to get BBC home web page")
+            Logger().setLogger(fo.log_path, 4, "Failed to get fo home web page")
             pass
 
         selector = etree.HTML(response.text)
@@ -35,7 +35,7 @@ class Fortune(object):
         for part in partA:
             item = dict()
             item['title'] = self.xpath_out(part.xpath('div[1]/a/text()')).strip()
-            item['link'] = "www.fortune.com/" + self.xpath_out(part.xpath('div[1]/a/@href'))
+            item['link'] = "http://www.fortune.com/" + self.xpath_out(part.xpath('div[1]/a/@href'))
             if not item['link'] in set:
                 set.append(item['link'])
                 yield item
@@ -43,7 +43,7 @@ class Fortune(object):
         for part in partB:
             item = dict()
             item['title'] = self.xpath_out(part.xpath('div[1]/a/text()')).strip()
-            item['link'] = "www.fortune.com/" + self.xpath_out(part.xpath('div[1]/a/@href'))
+            item['link'] = "http://www.fortune.com/" + self.xpath_out(part.xpath('div[1]/a/@href'))
             item['intro'] = self.xpath_out(part.xpath('div[2]/text()')).strip()
             item['image'] = self.xpath_out(part.xpath('a/div/noscript/div/img/@src'))
             if not item['link'] in set:
@@ -54,7 +54,7 @@ class Fortune(object):
         for part in partC:
             item = dict()
             item['title'] = self.xpath_out(part.xpath('div[1]/a/text()')).strip()
-            item['link'] = "www.fortune.com/" + self.xpath_out(part.xpath('div[1]/a/@href'))
+            item['link'] = "http://www.fortune.com/" + self.xpath_out(part.xpath('div[1]/a/@href'))
             item['image'] = self.xpath_out(part.xpath('a/div/noscript/div/img/@src'))
             if not item['link'] in set:
                 set.append(item['link'])
@@ -85,4 +85,5 @@ def run():
         pass
 
 if __name__ == '__main__':
+    # fo.log_path = "../" + fo.log_path
     run()

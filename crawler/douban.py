@@ -45,14 +45,10 @@ class Douban(object):
             item['link'] = self.get_out(s.xpath('a/@href'))
             item['title'] = self.get_out(s.xpath('a/text()'))
             item['hot'] = self.get_out(s.xpath('span/text()'))
-            print(item)
 
             item['hot'] = re.match(self.hot_pattern, str(item['hot']))
             if item['hot'] is not None:
                 item['hot'] = item['hot'].group(1)
-
-                # if item['hot']:
-                #     item['hot'] = item['hot'].group(1)
 
             if item['title']:
                 yield item
@@ -76,9 +72,7 @@ class Douban(object):
         return str
 
 
-
 def run():
-
     sets = Pipeline(do.site_id, do.site_name).structure_set()
     Pipeline(do.site_id, do.site_name).open_spider(sets)
 
@@ -94,4 +88,5 @@ def run():
         pass
 
 if __name__ == '__main__':
+    # do.log_path = "../" + do.log_path
     run()

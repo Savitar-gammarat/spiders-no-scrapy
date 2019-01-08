@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2227b9e4-8c08-4c2d-8303-53c66e831c0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/log/bbc.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/donews.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/douban.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/economist.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/fortune.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/huanqiu.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/main.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/netease.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/phoenix.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/pipelines.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/sina.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/slashdot.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/souhu.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/tencent.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/tieba.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/time.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/wired.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/xinhua.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/zhihu.log" afterDir="false" />
+    <list default="true" id="2227b9e4-8c08-4c2d-8303-53c66e831c0a" name="Default Changelist" comment="More Sites">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alchemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/alchemy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/bbc.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/bbc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/donews.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/donews.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/douban.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/douban.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/economist.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/economist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/fortune.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/fortune.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/huanqiu.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/huanqiu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/netease.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/netease.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/newyork.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/newyork.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/phoenix.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/phoenix.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/sina.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/sina.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/slashdot.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/slashdot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/souhu.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/souhu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/tencent.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/tencent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/tieba.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/tieba.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/time.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/wired.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/wired.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/xinhua.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/xinhua.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/zhihu.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/zhihu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dir.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/huanqiu.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/huanqiu.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/pipelines.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/pipelines.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,14 +44,14 @@
     <SUITE FILE_PATH="coverage/spiders$xinhua.coverage" NAME="xinhua Coverage Results" MODIFIED="1546744999785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$economist.coverage" NAME="economist Coverage Results" MODIFIED="1546676200257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$sina.coverage" NAME="sina Coverage Results" MODIFIED="1546748229386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
-    <SUITE FILE_PATH="coverage/spiders$tencent.coverage" NAME="tencent Coverage Results" MODIFIED="1546739747570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
+    <SUITE FILE_PATH="coverage/spiders$tencent.coverage" NAME="tencent Coverage Results" MODIFIED="1546910656571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$donews.coverage" NAME="donews Coverage Results" MODIFIED="1546583382300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$new_york_times.coverage" NAME="new-york-times Coverage Results" MODIFIED="1546663831076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$run__5_.coverage" NAME="run (5) Coverage Results" MODIFIED="1546536011800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tieba" />
     <SUITE FILE_PATH="coverage/spiders$dir.coverage" NAME="dir Coverage Results" MODIFIED="1546743036561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/spiders$bbc.coverage" NAME="bbc Coverage Results" MODIFIED="1546743458290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
+    <SUITE FILE_PATH="coverage/spiders$bbc.coverage" NAME="bbc Coverage Results" MODIFIED="1546907494152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$logger.coverage" NAME="logger Coverage Results" MODIFIED="1546738845529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/spiders$run.coverage" NAME="run Coverage Results" MODIFIED="1546861343070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/spiders$run.coverage" NAME="run Coverage Results" MODIFIED="1546910707002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/spiders$run__3_.coverage" NAME="run (3) Coverage Results" MODIFIED="1546535964872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tencent" />
     <SUITE FILE_PATH="coverage/spiders$twitter.coverage" NAME="twitter Coverage Results" MODIFIED="1546676057644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$netease.coverage" NAME="netease Coverage Results" MODIFIED="1546567010930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/netease" />
@@ -61,14 +59,14 @@
     <SUITE FILE_PATH="coverage/spiders$run__2_.coverage" NAME="run (2) Coverage Results" MODIFIED="1546535957164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sina" />
     <SUITE FILE_PATH="coverage/spiders$test.coverage" NAME="test Coverage Results" MODIFIED="1546588005403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProxyPool" />
     <SUITE FILE_PATH="coverage/spiders$zhihu.coverage" NAME="zhihu Coverage Results" MODIFIED="1546743874748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
-    <SUITE FILE_PATH="coverage/spiders$douban.coverage" NAME="douban Coverage Results" MODIFIED="1546854234183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
+    <SUITE FILE_PATH="coverage/spiders$douban.coverage" NAME="douban Coverage Results" MODIFIED="1546907927746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$souhu.coverage" NAME="souhu Coverage Results" MODIFIED="1546584930231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$time.coverage" NAME="time Coverage Results" MODIFIED="1546659159118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$new_york_time.coverage" NAME="new-york-time Coverage Results" MODIFIED="1546663899333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$pipelines.coverage" NAME="pipelines Coverage Results" MODIFIED="1546738986498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/spiders$alchemy.coverage" NAME="alchemy Coverage Results" MODIFIED="1546743323718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/spiders$run__4_.coverage" NAME="run (4) Coverage Results" MODIFIED="1546535951055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/phoenix" />
-    <SUITE FILE_PATH="coverage/spiders$huanqiu.coverage" NAME="huanqiu Coverage Results" MODIFIED="1546581558855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
+    <SUITE FILE_PATH="coverage/spiders$huanqiu.coverage" NAME="huanqiu Coverage Results" MODIFIED="1546910882203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/spiders$phoenix.coverage" NAME="phoenix Coverage Results" MODIFIED="1546567178661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/phoenix" />
   </component>
   <component name="DatabaseView">
@@ -89,51 +87,51 @@
     <session id="-48993372">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="4" />
+          <entry key="project.open.time.11" value="6" />
           <entry key="project.open.time.12" value="6" />
           <entry key="project.open.time.13" value="3" />
-          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="24" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="1" />
-          <entry key="log" value="2" />
-          <entry key="md" value="7" />
-          <entry key="py" value="361" />
-          <entry key="txt" value="18" />
+          <entry key="log" value="52" />
+          <entry key="md" value="9" />
+          <entry key="py" value="379" />
+          <entry key="txt" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="Markdown" value="7" />
-          <entry key="PLAIN_TEXT" value="20" />
-          <entry key="Python" value="361" />
+          <entry key="Markdown" value="9" />
+          <entry key="PLAIN_TEXT" value="74" />
+          <entry key="Python" value="379" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="md" value="207" />
-          <entry key="py" value="25539" />
-          <entry key="txt" value="139" />
+          <entry key="md" value="409" />
+          <entry key="py" value="26464" />
+          <entry key="txt" value="148" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="207" />
-          <entry key="PLAIN_TEXT" value="176" />
-          <entry key="Python" value="25539" />
+          <entry key="Markdown" value="409" />
+          <entry key="PLAIN_TEXT" value="185" />
+          <entry key="Python" value="26464" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -146,46 +144,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/bbc.py">
+        <entry file="file://$PROJECT_DIR$/log/huanqiu.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" selection-start-line="24" selection-end-line="26" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/economist.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/douban.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+            <state>
+              <caret column="104" selection-start-column="93" selection-end-column="104" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/run.py">
+        <entry file="file://$PROJECT_DIR$/crawler/huanqiu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="418">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -210,9 +181,9 @@
       <find>set_notsql</find>
       <find>site_set</find>
       <find>你好</find>
-      <find>print</find>
       <find>https://news.ifeng.com/warmstory/</find>
       <find>tb</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -251,10 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/phoenix/pipelines.py" />
-        <option value="$PROJECT_DIR$/phoenix/run.py" />
-        <option value="$PROJECT_DIR$/netease/pipelines.py" />
-        <option value="$PROJECT_DIR$/tencent/pipelines.py" />
         <option value="$PROJECT_DIR$/douban/pipelines.py" />
         <option value="$PROJECT_DIR$/douban/run.py" />
         <option value="$PROJECT_DIR$/douban/douban.py" />
@@ -273,35 +240,39 @@
         <option value="$PROJECT_DIR$/crawler/netease.py" />
         <option value="$PROJECT_DIR$/crawler/phoenix.py" />
         <option value="$PROJECT_DIR$/crawler/run.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/log/douban/douban-2019-01-04.txt" />
-        <option value="$PROJECT_DIR$/crawler/donews.py" />
         <option value="$PROJECT_DIR$/crawler/souhu.py" />
         <option value="$PROJECT_DIR$/BBC.html" />
-        <option value="$PROJECT_DIR$/crawler/huanqiu.py" />
         <option value="$PROJECT_DIR$/crawler/new-york-times.py" />
         <option value="$PROJECT_DIR$/crawler/twitter.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/crawler/tencent.py" />
-        <option value="$PROJECT_DIR$/crawler/bbc.py" />
-        <option value="$PROJECT_DIR$/crawler/economist.py" />
-        <option value="$PROJECT_DIR$/crawler/fortune.py" />
         <option value="$PROJECT_DIR$/crawler/newyork.py" />
-        <option value="$PROJECT_DIR$/crawler/slashdot.py" />
         <option value="$PROJECT_DIR$/crawler/time.py" />
-        <option value="$PROJECT_DIR$/crawler/wired.py" />
         <option value="$PROJECT_DIR$/pipelines.py" />
         <option value="$PROJECT_DIR$/dir.py" />
         <option value="$PROJECT_DIR$/alchemy.py" />
         <option value="$PROJECT_DIR$/logger.py" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/crawler/xinhua.py" />
         <option value="$PROJECT_DIR$/crawler/sina.py" />
         <option value="$PROJECT_DIR$/crawler/tieba.py" />
         <option value="$PROJECT_DIR$/crawler/zhihu.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/crawler/douban.py" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/crawler/bbc.py" />
+        <option value="$PROJECT_DIR$/crawler/donews.py" />
+        <option value="$PROJECT_DIR$/log/bbc.log" />
+        <option value="$PROJECT_DIR$/log/douban.log" />
+        <option value="$PROJECT_DIR$/log/pipelines.log" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/crawler/slashdot.py" />
+        <option value="$PROJECT_DIR$/crawler/wired.py" />
+        <option value="$PROJECT_DIR$/crawler/economist.py" />
+        <option value="$PROJECT_DIR$/crawler/fortune.py" />
+        <option value="$PROJECT_DIR$/crawler/tencent.py" />
+        <option value="$PROJECT_DIR$/log/tencent.log" />
+        <option value="$PROJECT_DIR$/crawler/huanqiu.py" />
       </list>
     </option>
   </component>
@@ -338,6 +309,11 @@
               <item name="spiders" type="462c0819:PsiDirectoryNode" />
               <item name="crawler" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="spiders" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spiders" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -363,7 +339,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run">
+  <component name="RunManager" selected="Python.huanqiu">
+    <configuration name="bbc" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="spiders" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crawler" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/bbc.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="douban" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="spiders" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -378,6 +376,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/douban.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="huanqiu" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="spiders" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crawler" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/huanqiu.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -408,7 +428,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sina" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tencent" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="spiders" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -421,51 +441,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/sina.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="xinhua" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="spiders" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crawler" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/xinhua.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="zhihu" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="spiders" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crawler" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/zhihu.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/tencent.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -475,19 +451,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.sina" />
-      <item itemvalue="Python.zhihu" />
-      <item itemvalue="Python.xinhua" />
       <item itemvalue="Python.run" />
       <item itemvalue="Python.douban" />
+      <item itemvalue="Python.bbc" />
+      <item itemvalue="Python.tencent" />
+      <item itemvalue="Python.huanqiu" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.huanqiu" />
         <item itemvalue="Python.run" />
+        <item itemvalue="Python.tencent" />
         <item itemvalue="Python.douban" />
-        <item itemvalue="Python.sina" />
-        <item itemvalue="Python.xinhua" />
-        <item itemvalue="Python.zhihu" />
+        <item itemvalue="Python.bbc" />
       </list>
     </recent_temporary>
   </component>
@@ -628,7 +604,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546743907515</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="More Sites">
+      <created>1546862775663</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1546862775663</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -644,12 +627,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5041051" visible="true" weight="0.3472012" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5041051" visible="true" weight="0.36308622" />
       <window_info id="Structure" order="1" sideWeight="0.4958949" side_tool="true" weight="0.3260212" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.36288998" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.33825943" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -670,6 +653,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -686,44 +672,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="More Sites" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/phoenix/phoenix.py" />
-    <entry file="file://$PROJECT_DIR$/phoenix/run.py" />
-    <entry file="file://$PROJECT_DIR$/sina/pipelines.py" />
-    <entry file="file://$PROJECT_DIR$/sina/run.py" />
-    <entry file="file://$PROJECT_DIR$/sina/sina.py" />
-    <entry file="file://$PROJECT_DIR$/tencent/pipelines.py" />
-    <entry file="file://$PROJECT_DIR$/tencent/run.py" />
-    <entry file="file://$PROJECT_DIR$/tencent/tencent.py" />
-    <entry file="file://$PROJECT_DIR$/tieba/pipelines.py" />
-    <entry file="file://$PROJECT_DIR$/tieba/run.py" />
-    <entry file="file://$PROJECT_DIR$/tieba/tieba.py" />
-    <entry file="file://$PROJECT_DIR$/netease/netease.py" />
-    <entry file="file://$PROJECT_DIR$/zhihu/pipelines.py" />
-    <entry file="file://$PROJECT_DIR$/zhihu/zhihu.py" />
-    <entry file="file://$PROJECT_DIR$/zhihu/run.py" />
-    <entry file="file://$PROJECT_DIR$/crawler/run.py" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="171">
-            <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/douban/douban-2019-01-04.txt" />
-    <entry file="file://$PROJECT_DIR$/BBC.html" />
     <entry file="file://$PROJECT_DIR$/log/bbc/bbc-2019-01-04.txt" />
     <entry file="file://$PROJECT_DIR$/log/pipeline-2019-01-04.txt" />
     <entry file="file://$PROJECT_DIR$/req.txt" />
-    <entry file="file://$PROJECT_DIR$/crawler/donews.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="60" selection-start-line="60" selection-end-line="61" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/netease.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
@@ -746,35 +697,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log/tencent.txt" />
-    <entry file="file://$PROJECT_DIR$/crawler/tencent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" selection-start-line="12" selection-end-line="119" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/fortune.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/huanqiu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/newyork.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
@@ -782,44 +705,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/slashdot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/time.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/wired.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dir.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/main.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/pipelines.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alchemy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -869,38 +758,172 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/bbc.py">
+    <entry file="file://$PROJECT_DIR$/reqier.txt" />
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" selection-start-line="24" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/economist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="95">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/douban.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+        <state relative-caret-position="267">
+          <caret line="92" column="50" lean-forward="true" selection-start-line="92" selection-start-column="50" selection-end-line="92" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alchemy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dir.py" />
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/bbc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="105" selection-start-line="105" selection-end-line="105" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/donews.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="-196">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#51#85#0" expanded="true" />
+            <marker date="1546909505121" expanded="true" signature="459:460" ph="..." />
+            <marker date="1546909505121" expanded="true" signature="1095:1135" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="304">
+            <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/slashdot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/wired.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/economist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/fortune.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/tencent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="139" selection-start-line="139" selection-end-line="139" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/tieba.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/time.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/wired.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/xinhua.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/zhihu.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/sina.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/slashdot.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/souhu.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/tencent.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/bbc.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/donews.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/douban.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/economist.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/fortune.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/main.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/netease.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/phoenix.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/pipelines.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/huanqiu.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="104" selection-start-column="93" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/huanqiu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
         </state>
       </provider>
     </entry>

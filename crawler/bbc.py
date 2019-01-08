@@ -103,4 +103,5 @@ def run():
 
 
 if __name__ == '__main__':
+    # bbc.log_path = "../" + bbc.log_path
     run()

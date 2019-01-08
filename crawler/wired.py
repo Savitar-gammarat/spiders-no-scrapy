@@ -22,14 +22,14 @@ class Wired(object):
         try:
             response = requests.get('https://www.wired.com/most-recent/',headers=self.headers,proxies=self.proxies)
         except:
-            Logger().setLogger(wd.log_path, 4, "Failed to get BBC home web page")
+            Logger().setLogger(wd.log_path, 4, "Failed to get wd home web page")
             pass
 
         selector = etree.HTML(response.content)
         part = selector.xpath('//div[@class="archive-listing-component"]/div[1]/ul/li')
         for article in part:
             item=dict()
-            item['link'] = "www.wired.com" + self.xpath_out(article.xpath('div[@class="archive-item-component__info"]/a/@href')).encode('utf8').decode('utf8')
+            item['link'] = "https://www.wired.com" + self.xpath_out(article.xpath('div[@class="archive-item-component__info"]/a/@href')).encode('utf8').decode('utf8')
             item['title'] = self.xpath_out(article.xpath('div[@class="archive-item-component__info"]/a/h2/text()'))
             item['intro'] = self.xpath_out(article.xpath('div[@class="archive-item-component__info"]/a/p/text()'))
             item['image'] = self.xpath_out(article.xpath('a/div/div/div/div/img/@src'))
@@ -59,4 +59,5 @@ def run():
         pass
 
 if __name__ == '__main__':
+    # wd.log_path = "../" + wd.log_path
     run()

@@ -70,4 +70,5 @@ def run():
         pass
 
 if __name__ == '__main__':
+    # xh.log_path = "../" + xh.log_path
     run()

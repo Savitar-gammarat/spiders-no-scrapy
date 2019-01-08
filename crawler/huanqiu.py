@@ -35,6 +35,7 @@ class Huanqiu(object):
         return detail_urls
 
     def second_requests(self, detail_urls):
+        print(detail_urls)
         for detail_url in detail_urls:
             try:
                 response = requests.get(detail_url, headers=self.headers)
@@ -113,4 +114,5 @@ def run():
 
 
 if __name__ == '__main__':
+    # hq.log_path = "../" + hq.log_path
     run()

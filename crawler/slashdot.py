@@ -38,6 +38,7 @@ class SlashDot(object):
 
     def process_item(self,item):
         item['datetime'] = str(datetime.strptime(item['datetime'], 'on %A %B %d, %Y %I:%M%p'))
+        item['link'] = "https://" + item['link']
         return item
 
     def xpath_out(self, list):
@@ -65,4 +66,5 @@ def run():
 
 
 if __name__ == '__main__':
+    # sd.log_path = "../" + sd.log_path
     run()

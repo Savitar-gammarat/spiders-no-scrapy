@@ -79,4 +79,5 @@ def run():
         pass
 
 if __name__ == '__main__':
+    # sh.log_path = "../" + sh.log_path
     run()

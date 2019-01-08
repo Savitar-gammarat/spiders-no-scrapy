@@ -90,4 +90,5 @@ def run():
 
 
 if __name__ == '__main__':
+    # ne.log_path = "../" + ne.log_path
     run()

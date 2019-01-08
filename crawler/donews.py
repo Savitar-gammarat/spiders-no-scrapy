@@ -62,4 +62,5 @@ def run():
         pass
 
 if __name__ == '__main__':
+    # dn.log_path = "../" + dn.log_path
     run()

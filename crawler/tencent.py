@@ -52,14 +52,15 @@ class Tencent(object):
                 item['link'] = url
                 item['title'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/h1/text()')
                 item['datetime'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/div/div[1]/span[3]/text()')
-                if item['title'] != []:
+                if item['title'] != [] and item['datetime'] != []:
                     item['title'] = item['title'][0]
                     item['datetime'] = item['datetime'][0]
-
+                elif item['title'] != [] and item['datetime'] == []:
+                    item['title'] = item['title'][0]
+                    item['datetime'] = selector.xpath('//*[@id="Main-Article-QQ"]/div/div[1]/div[1]/div[1]/div/div[1]/span[2]/text()')[0]
                 else:
                     item['title'] = selector.xpath('//*[@id="Main-Article-QQ"]/div[2]/div[1]/div[2]/div[1]/h1/text()')[0]
                     item['datetime'] = selector.xpath('//*[@id="Main-Article-QQ"]/div[2]/div[1]/div[2]/div[1]/div/div[1]/span[3]/text()')[0]
-                # print(item)
                 yield item
             except:
                 Logger().setLogger(tc.log_path, 2, "Failed to get A class detail page info,url is" + url)
@@ -136,4 +137,5 @@ def run():
         pass
 
 if __name__ == '__main__':
+    # tc.log_path = "../" + tc.log_path
     run()

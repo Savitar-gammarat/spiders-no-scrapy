@@ -23,7 +23,7 @@ class Economic(object):
         try:
             response = requests.get('https://www.economist.com/latest/',headers=self.headers,proxies=self.proxies)
         except:
-            Logger().setLogger(ec.log_path, 4, "Failed to get BBC home web page")
+            Logger().setLogger(ec.log_path, 4, "Failed to get ec home web page")
             pass
         selector = etree.HTML(response.text)
         articles = selector.xpath('//div[@class="teaser-list"]/article')
@@ -31,7 +31,7 @@ class Economic(object):
         for article in articles:
             item = dict()
             item['title'] = self.xpath_out(article.xpath('a/div[2]/h3/span[2]/text()'))
-            item['link'] = "www.economist.com" + self.xpath_out(article.xpath('a/@href'))
+            item['link'] = "https://www.economist.com" + self.xpath_out(article.xpath('a/@href'))
             item['intro'] = self.xpath_out(article.xpath('a/div[2]/div[@class="teaser__text"]/text()'))
             item['datetime'] = self.xpath_out(article.xpath('a/div[2]/div[@class="teaser__datetime"]/time/@datetime'))
             item['image'] = self.xpath_out(article.xpath('a/div[1]/div/noscript/div/img/@src'))
@@ -61,4 +61,5 @@ def run():
         Logger().setLogger(ec.log_path, 4, "Failed to close spider,db_session may failed")
 
 if __name__ == '__main__':
+    # ec.log_path = "../" + ec.log_path
     run()

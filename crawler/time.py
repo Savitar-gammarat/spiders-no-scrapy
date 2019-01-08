@@ -63,4 +63,5 @@ def run():
         Logger().setLogger(time.log_path, 4, "Failed to close spider,db_session may failed")
 
 if __name__ == '__main__':
+    # time.log_path = "../" + time.log_path
     run()

@@ -74,5 +74,5 @@ def run():
         pass
 
 if __name__ == '__main__':
-
+    # zh.log_path = "../" + zh.log_path
     run()

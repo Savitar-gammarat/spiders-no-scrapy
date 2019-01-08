@@ -45,7 +45,6 @@ class Sina(object):
             yield item
 
 
-
 def run():
 
     sets = Pipeline(sina.site_id, sina.site_name).structure_set()
@@ -62,4 +61,5 @@ def run():
         pass
 
 if __name__ == '__main__':
+    # sina.log_path = "../" + sina.log_path
     run()
