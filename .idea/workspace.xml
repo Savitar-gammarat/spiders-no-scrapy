@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2227b9e4-8c08-4c2d-8303-53c66e831c0a" name="Default Changelist" comment="More Sites">
+    <list default="true" id="2227b9e4-8c08-4c2d-8303-53c66e831c0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/bbc.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/bbc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/donews.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/donews.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/douban.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/douban.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/economist.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/economist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/fortune.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/fortune.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/huanqiu.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/huanqiu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/netease.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/netease.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/newyork.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/newyork.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/phoenix.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/phoenix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/sina.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/sina.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/slashdot.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/slashdot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/souhu.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/souhu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/tencent.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/tencent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/tieba.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/tieba.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/time.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/time.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/wired.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/wired.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/xinhua.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/xinhua.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/zhihu.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/zhihu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/log/huanqiu.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/huanqiu.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/pipelines.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/pipelines.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,19 +64,20 @@
     <session id="-48993372">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="28" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="6" />
           <entry key="project.open.time.12" value="6" />
           <entry key="project.open.time.13" value="3" />
-          <entry key="project.open.time.14" value="2" />
+          <entry key="project.open.time.14" value="3" />
           <entry key="project.open.time.15" value="3" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -107,7 +85,7 @@
           <entry key="html" value="1" />
           <entry key="log" value="52" />
           <entry key="md" value="9" />
-          <entry key="py" value="379" />
+          <entry key="py" value="383" />
           <entry key="txt" value="22" />
         </counts>
       </usages-collector>
@@ -116,22 +94,22 @@
           <entry key="HTML" value="1" />
           <entry key="Markdown" value="9" />
           <entry key="PLAIN_TEXT" value="74" />
-          <entry key="Python" value="379" />
+          <entry key="Python" value="383" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
           <entry key="md" value="409" />
-          <entry key="py" value="26464" />
-          <entry key="txt" value="148" />
+          <entry key="py" value="26473" />
+          <entry key="txt" value="161" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="409" />
-          <entry key="PLAIN_TEXT" value="185" />
-          <entry key="Python" value="26464" />
+          <entry key="PLAIN_TEXT" value="198" />
+          <entry key="Python" value="26473" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -144,19 +122,42 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/huanqiu.log">
+        <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="104" selection-start-column="93" selection-end-column="104" />
+            <state relative-caret-position="285">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#51#85#0" expanded="true" />
+                <marker date="1546909505121" expanded="true" signature="459:460" ph="..." />
+                <marker date="1546909505121" expanded="true" signature="1095:1135" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawler/economist.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/crawler/huanqiu.py">
+        <entry file="file://$PROJECT_DIR$/crawler/time.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="172">
+              <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawler/bbc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1691">
+              <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -202,7 +203,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Updated-Structure" />
       </map>
     </option>
     <excluded-from-favorite>
@@ -222,7 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/douban/pipelines.py" />
         <option value="$PROJECT_DIR$/douban/run.py" />
         <option value="$PROJECT_DIR$/douban/douban.py" />
         <option value="$PROJECT_DIR$/netease/run.py" />
@@ -247,7 +247,6 @@
         <option value="$PROJECT_DIR$/crawler/twitter.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/crawler/newyork.py" />
-        <option value="$PROJECT_DIR$/crawler/time.py" />
         <option value="$PROJECT_DIR$/pipelines.py" />
         <option value="$PROJECT_DIR$/dir.py" />
         <option value="$PROJECT_DIR$/alchemy.py" />
@@ -273,6 +272,8 @@
         <option value="$PROJECT_DIR$/crawler/tencent.py" />
         <option value="$PROJECT_DIR$/log/tencent.log" />
         <option value="$PROJECT_DIR$/crawler/huanqiu.py" />
+        <option value="$PROJECT_DIR$/log/huanqiu.log" />
+        <option value="$PROJECT_DIR$/crawler/time.py" />
       </list>
     </option>
   </component>
@@ -308,11 +309,6 @@
               <item name="spiders" type="b2602c69:ProjectViewProjectNode" />
               <item name="spiders" type="462c0819:PsiDirectoryNode" />
               <item name="crawler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spiders" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spiders" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -611,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546862775663</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="V0.1 Finished">
+      <created>1546910977559</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1546910977559</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -627,21 +630,21 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5041051" visible="true" weight="0.36308622" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5041051" visible="true" weight="0.37367624" />
       <window_info id="Structure" order="1" sideWeight="0.4958949" side_tool="true" weight="0.3260212" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.33825943" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.3366174" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32840723" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.43513957" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.9425287" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.59770113" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32840723" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -669,7 +672,8 @@
     <MESSAGE value="Tencent Zhihu Douban Sina Tieba Phoenix Netease and structure finished" />
     <MESSAGE value="XinHua" />
     <MESSAGE value="More Sites" />
-    <option name="LAST_COMMIT_MESSAGE" value="More Sites" />
+    <MESSAGE value="V0.1 Finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="V0.1 Finished" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/log/bbc/bbc-2019-01-04.txt" />
@@ -701,13 +705,6 @@
     <entry file="file://$PROJECT_DIR$/crawler/newyork.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
           <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
         </state>
       </provider>
@@ -788,29 +785,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/bbc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="105" selection-start-line="105" selection-end-line="105" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/donews.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-196">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#51#85#0" expanded="true" />
-            <marker date="1546909505121" expanded="true" signature="459:460" ph="..." />
-            <marker date="1546909505121" expanded="true" signature="1095:1135" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -835,13 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/economist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -913,17 +884,46 @@
     <entry file="file://$PROJECT_DIR$/log/pipelines.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/huanqiu.log">
+    <entry file="file://$PROJECT_DIR$/crawler/huanqiu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="104" selection-start-column="93" selection-end-column="104" />
+        <state relative-caret-position="416">
+          <caret line="116" selection-start-line="116" selection-end-line="116" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/huanqiu.py">
+    <entry file="file://$PROJECT_DIR$/log/huanqiu.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        <state relative-caret-position="285">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#51#85#0" expanded="true" />
+            <marker date="1546909505121" expanded="true" signature="459:460" ph="..." />
+            <marker date="1546909505121" expanded="true" signature="1095:1135" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/bbc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1691">
+          <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/economist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
         </state>
       </provider>
     </entry>

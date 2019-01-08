@@ -30,13 +30,13 @@ class Time(object):
         for part in partA:
             item = dict()
             item['title'] = self.xpath_out(part.xpath('div[@class="column-tout-info "]/div/div/a/text()')).strip()
-            item['link'] = "time.com" + self.xpath_out(part.xpath('div[@class="column-tout-info "]/div/div/a/@href'))
+            item['link'] = "http://time.com" + self.xpath_out(part.xpath('div[@class="column-tout-info "]/div/div/a/@href'))
             yield item
 
         for part in partB:
             item = dict()
             item['title'] = self.xpath_out(part.xpath('div[@class="column-tout-info "]/div/div[1]/a/text()')).strip()
-            item['link'] = "time.com" + self.xpath_out(part.xpath('div[@class="column-tout-info "]/div/div[1]/a/@href'))
+            item['link'] = "http://time.com" + self.xpath_out(part.xpath('div[@class="column-tout-info "]/div/div[1]/a/@href'))
             yield item
 
 
