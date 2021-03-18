@@ -72,7 +72,6 @@ def run():
     Pipeline(sh.site_id, sh.site_name).open_spider(sets)
 
     for item in SouHu().first_requests():
-        print(item)
         Pipeline(sh.site_id, sh.site_name).process_item(item)
         Pipeline(sh.site_id, sh.site_name).upload_item(item, sets)
 

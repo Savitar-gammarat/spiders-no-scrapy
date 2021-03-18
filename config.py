@@ -2,19 +2,19 @@
 import datetime
 
 class ORM(object):
-    # #服务器
-    # username = 'hao'
-    # password = '******'
-    # host = '******'
-    # port = '3306'
-    # database= 'news-aggregation'
-
-    #本机
+    #服务器
     username = 'root'
-    password = ''
-    host = 'localhost'
+    password = '991004'
+    host = '81.68.195.64'
     port = '3306'
-    database = 'news-aggregation'
+    database= 'news-aggregation'
+
+    # #本机
+    # username = 'root'
+    # password = ''
+    # host = 'localhost'
+    # port = '3306'
+    # database = 'news-aggregation'
 
     today = str(datetime.date.today())
 

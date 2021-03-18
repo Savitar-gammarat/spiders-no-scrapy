@@ -30,7 +30,6 @@ def run():
     Pipeline(dn.site_id, dn.site_name).open_spider(sets)
 
     for item in DoNews().first_requests():
-        print(item)
         Pipeline(dn.site_id, dn.site_name).process_item(item)
         Pipeline(dn.site_id, dn.site_name).upload_item(item, sets)
 

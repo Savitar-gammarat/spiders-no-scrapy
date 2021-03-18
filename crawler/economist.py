@@ -28,7 +28,6 @@ def run():
     Pipeline(ec.site_id, ec.site_name).open_spider(sets)
 
     for item in Economic().first_requests():
-        print(item)
         Pipeline(ec.site_id, ec.site_name).process_item(item)
         Pipeline(ec.site_id, ec.site_name).upload_item(item, sets)
 

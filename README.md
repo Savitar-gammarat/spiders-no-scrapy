@@ -16,3 +16,10 @@ crawler文件夹下根据项目名找到爬虫，修改if __name=="main"下（�
 ## **待开发:**
 更多的爬虫，优化的Log
 "# Spiders-New-structure-Again" 
+
+## Ubuntu配置ssr、Privoxy及设置http代理：
+ssr配置脚本：https://github.com/the0demiurge/CharlesScripts/blob/master/charles/bin/ssr
+
+shadowsocksr：git clone https://github.com/shadowsocksrr/shadowsocksr.git
+
+privoxy安装配置：http://www.36nu.com/post/294
